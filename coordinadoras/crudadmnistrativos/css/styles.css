@@ -2,9 +2,21 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background: url('../assets/img/img.png') no-repeat center center fixed, #d29bfd;
+    background-size: cover;
     margin: 0;
     padding: 0;
+    color: #333;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .container {
@@ -14,6 +26,18 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: slideUp 1s ease-in-out;
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .navbar {
@@ -25,6 +49,7 @@ body {
     color: white;
     padding: 10px;
     border-radius: 5px;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 .navbar span {
@@ -39,23 +64,26 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .navbar button:hover {
     background-color: #e68900;
+    transform: scale(1.05);
 }
 
 h1 {
     text-align: center;
     color: #007bff;
     margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
 }
 
 .controls {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+    animation: slideUp 1s ease-in-out;
 }
 
 .controls input {
@@ -75,16 +103,18 @@ h1 {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .controls button:hover {
     background-color: #0056b3;
+    transform: scale(1.05);
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
+    animation: fadeIn 2s ease-in-out;
 }
 
 table th, table td {
@@ -103,7 +133,7 @@ table th {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .edit-button {
@@ -113,6 +143,7 @@ table th {
 
 .edit-button:hover {
     background-color: #e68900;
+    transform: scale(1.05);
 }
 
 .delete-button {
@@ -122,6 +153,7 @@ table th {
 
 .delete-button:hover {
     background-color: #c82333;
+    transform: scale(1.05);
 }
 
 button {
@@ -131,9 +163,10 @@ button {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 button:hover {
     filter: brightness(90%);
+    transform: scale(1.05);
 }
