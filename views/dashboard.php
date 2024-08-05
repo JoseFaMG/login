@@ -46,13 +46,13 @@ $rol = $_SESSION['rol'];
                 </a></li>
         </ul>
     <?php elseif ($rol === 'cobranza'): ?>
-        <p>Acceso a funciones de cobranza</p>
+        <p>Acceso a funciones de directora</p>
         <ul>
-            <li><a href="../cobranza/crudalumnos/alumnos.php" class="button">
+            <li><a href="../directora/crudalumnos/alumnos.php" class="button">
                     <img src="../assets/img/estudiantes.png" alt="Función 1">
                     Administrar Alumnos
                 </a></li>
-            <li><a href="../cobranza/crudalumnos/alumnos.php" class="button">
+            <li><a href="../directora/crudalumnos/alumnos.php" class="button">
                     <img src="../assets/img/gerente.png" alt="Función 2">
                     Administrar usuarios
                 </a></li>
