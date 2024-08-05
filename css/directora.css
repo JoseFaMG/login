@@ -1,0 +1,9 @@
+/* directora.css */
+body.directora {
+    background-color: #f3e5f5;
+    color: #4a148c;
+}
+
+body.directora a {
+    color: #6a1b9a;
+}

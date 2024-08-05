@@ -1,0 +1,152 @@
+/* style.css */
+
+/* Estilos generales para todos los roles */
+body {
+    background: url('../assets/img/img.png') no-repeat center center fixed, #d29bfd;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #006064;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.menu-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 98%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    background-color: #895cd0;
+    border-radius: 10px;
+    z-index: 1000;
+    margin: 10px;
+    animation: slideDown 1s ease-in-out;
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.menu-bar .button {
+    margin: 0;
+    padding: 10px 40px;
+    background-color: #e799c0;
+    color: #000000;
+    border: 2px solid #e799c0;
+    font-size: 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    width: 100px;
+    animation: buttonAppear 1s ease-in-out;
+}
+
+.menu-bar .button:hover {
+    background-color: #e799c0;
+}
+
+@keyframes buttonAppear {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.welcome-container {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.welcome-container h1, .welcome-container h2 {
+    margin: 0;
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+}
+
+ul li {
+    margin: 10px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .menu-bar {
+        width: 95%;
+        margin: 10px auto;
+        justify-content: center;
+    }
+
+    .menu-bar .button {
+        padding: 8px 20px;
+        font-size: 14px;
+        width: auto;
+    }
+
+    .welcome-container {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-bar {
+        width: 90%;
+        margin: 10px auto;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-bar .button {
+        padding: 6px 15px;
+        font-size: 12px;
+        width: 80px;
+        margin: 5px 0;
+    }
+
+    ul {
+        flex-direction: column;
+    }
+
+    ul li {
+        margin: 5px 0;
+    }
+
+    .welcome-container {
+        padding: 10px;
+    }
+}

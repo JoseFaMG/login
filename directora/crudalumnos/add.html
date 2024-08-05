@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Alumno</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Agregar Alumno</h1>
+    <form action="php/add.php" method="POST">
+        <label for="matricula">Matrícula:</label>
+        <input type="text" name="matricula" id="matricula" required>
+
+        <label for="nombre">Nombre del Alumno:</label>
+        <input type="text" name="nombre" id="nombre" required>
+
+        <label for="cuatrimestre">Cuatrimestre:</label>
+        <input type="number" name="cuatrimestre" id="cuatrimestre" required>
+
+        <label for="correo">Correo Institucional:</label>
+        <input type="email" name="correo" id="correo" required>
+
+        <label for="estado">Estado:</label>
+        <select name="estado" id="estado">
+            <option value="permitido">Permitido</option>
+            <option value="pendiente">Pendiente</option>
+            <option value="denegado">Denegado</option>
+        </select>
+
+        <button type="submit">Guardar</button>
+    </form>
+</div>
+</body>
+</html>

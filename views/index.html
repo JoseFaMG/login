@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>UTC</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="login-container">
+    <form action="../actions/authenticate.php" method="POST">
+        <img src="../assets/img/logo.png" alt="Logo" class="logo">
+        <h2>Control de acceso UTC</h2>
+        <label for="username">Usuario</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Ingresar</button>
+        <a href="registro.html" class="register-link">Registrarse</a>
+    </form>
+</div>
+<footer>
+    <p>UTC Todos los derechos reservados © 2024</p>
+</footer>
+<script src="../js/script.js"></script>
+</body>
+</html>

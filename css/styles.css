@@ -1,0 +1,166 @@
+/* styles.css */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: url('../assets/img/img.png') no-repeat center center fixed, #d29bfd;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    animation: fadeInBackground 2s ease-in;
+}
+
+.login-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 350px;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.logo {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333333;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #555555;
+}
+
+input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #dddddd;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+input:focus {
+    background-color: #ffffff;
+    border-color: #007bff;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    border: none;
+    color: #ffffff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+    animation: pulse 2s infinite;
+}
+
+button:hover {
+    background-color: #ec6b31;
+    transform: translateY(-2px);
+}
+
+button:active {
+    background-color: #004080;
+    transform: translateY(0);
+}
+
+.login-container a {
+    display: block;
+    margin-top: 20px;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.login-container a:hover {
+    color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.register-link {
+    margin-top: 10px;
+    color: #28a745;
+}
+
+.register-link:hover {
+    color: #218838;
+    transform: translateY(-2px);
+}
+
+/* Footer styles */
+footer {
+    margin-top: 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInBackground {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Example of adding shake animation on error (this can be triggered via JavaScript) */
+input.error {
+    animation: shake 0.5s;
+    border-color: #ff0000;
+}

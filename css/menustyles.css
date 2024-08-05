@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0e0e0; /* Un gris más suave para el fondo */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.menu-bar {
+    width: 90%; /* Un poco más pequeño para dar la sensación de flotante */
+    background-color: #007BFF; /* Azul para la barra de menú */
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Padding para espacio dentro de la barra */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+    margin: 20px auto; /* Margen superior e inferior para que parezca flotante */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+.welcome-message {
+    font-size: 18px;
+}
+
+.logout-button {
+    background-color: #FF7F00; /* Naranja para el botón de cerrar sesión */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+    background-color: #cc6600; /* Naranja más oscuro */
+}
+
+.menu-container {
+    text-align: center;
+    background-color: #ffffff; /* Blanco para el fondo del contenedor */
+    padding: 30px; /* Aumentamos el padding para más espacio */
+    border-radius: 10px; /* Bordes ligeramente más redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+    margin-top: 20px; /* Espacio entre la barra de menú y el contenido */
+    width: 90%; /* Un poco más pequeño para que coincida con la barra de menú */
+}
+
+h1 {
+    color: #333; /* Color de texto oscuro */
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+.menu-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacio entre los botones */
+}
+
+button {
+    background-color: #007BFF; /* Color azul */
+    color: #fff;
+    border: none;
+    padding: 15px 20px; /* Aumentamos el padding horizontal */
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s; /* Añadimos transición para el transform */
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre el texto y la imagen */
+    flex-direction: column;
+}
+
+button:hover {
+    background-color: #0056b3; /* Azul más oscuro */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el cursor */
+}
+
+button img {
+    max-width: 100%; /* Aseguramos que la imagen mantenga su tamaño original */
+    height: auto;
+}
+
+button:last-child {
+    background-color: #FF7F00; /* Color naranja */
+}
+
+button:last-child:hover {
+    background-color: #cc6600; /* Naranja más oscuro */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el cursor */
+}

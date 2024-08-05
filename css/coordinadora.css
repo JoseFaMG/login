@@ -1,0 +1,9 @@
+/* coordinadora.css */
+body.coordinadora {
+    background-color: #e0f7fa;
+    color: #006064;
+    animation: fadeIn 2s ease-in-out;
+}
+body.coordinadora a {
+    color: #004d40;
+}

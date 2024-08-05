@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Alumno</title>
+    <link rel="stylesheet" href="php/css/stylesregistro.css">
+</head>
+<body>
+<div class="container">
+    <h1>Editar Alumno</h1>
+    <form action="php/update.php" method="POST">
+        <input type="hidden" name="id" id="id">
+
+        <label for="matricula">Matrícula:</label>
+        <input type="text" name="matricula" id="matricula" required>
+
+        <label for="nombre">Nombre del Alumno:</label>
+        <input type="text" name="nombre" id="nombre" required>
+
+        <label for="cuatrimestre">Cuatrimestre:</label>
+        <input type="number" name="cuatrimestre" id="cuatrimestre" required>
+
+        <label for="correo">Correo Institucional:</label>
+        <input type="email" name="correo" id="correo" required>
+
+        <label for="estado">Estado:</label>
+        <select name="estado" id="estado">
+            <option value="permitido">Permitido</option>
+            <option value="pendiente">Pendiente</option>
+            <option value="denegado">Denegado</option>
+        </select>
+
+        <button type="submit">Guardar</button>
+    </form>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('id');
+
+        if (id) {
+            console.log('Fetching data for ID:', id); // Depuración
+            fetch(`php/list.php?id=${id}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Data received:', data); // Depuración
+                    if (data && data.id) {
+                        document.getElementById('id').value = data.id;
+                        document.getElementById('matricula').value = data.matricula;
+                        document.getElementById('nombre').value = data.nombre;
+                        document.getElementById('cuatrimestre').value = data.cuatrimestre;
+                        document.getElementById('correo').value = data.correo;
+                        document.getElementById('estado').value = data.estado;
+                    } else {
+                        console.error('Invalid data received:', data);
+                    }
+                })
+                .catch(error => console.error('Fetch error:', error));
+        } else {
+            console.error('No ID found in URL parameters');
+        }
+    });
+</script>
+</body>
+</html>
