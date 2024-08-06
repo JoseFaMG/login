@@ -19,7 +19,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Usuario';
 </head>
 <body class="coordinadora">
 <div class="menu-bar">
-    <a href="../actions/logout.php" class="button">Cerrar sesión</a>
+    <a href="../actions/logout.php" class="logout-button">Cerrar sesión</a>
 </div>
 
 <div class="welcome-container">
