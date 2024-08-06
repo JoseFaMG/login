@@ -14,15 +14,9 @@ $rol = $_SESSION['rol'];
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <?php if ($rol === 'coordinadora'): ?>
-        <link rel="stylesheet" href="../css/coordinadora.css">
-    <?php elseif ($rol === 'cobranza'): ?>
-        <link rel="stylesheet" href="../css/cobranza.css">
-    <?php elseif ($rol === 'directora'): ?>
-        <link rel="stylesheet" href="../css/directora.css">
-    <?php endif; ?>
+    <title>Menu</title>
+    <link rel="stylesheet" href="../css/style.css" class="rel">
+    <link rel="icon" href="../assets/img/logo-utc-v01.svg">
 </head>
 <body class="<?php echo htmlspecialchars($rol); ?>">
 <div class="menu-bar">
@@ -35,40 +29,40 @@ $rol = $_SESSION['rol'];
 
     <?php if ($rol === 'coordinadora'): ?>
         <p>Acceso a funciones de coordinadora</p>
-        <ul>
-            <li><a href="../coordinadoras/crudalumnos/alumnos.php" class="button">
-                    <img src="../assets/img/estudiantes.png" alt="Función 1">
-                    Administrar Alumnos
-                </a></li>
-            <li><a href="../coordinadoras/crudadmnistrativos/usuarios.php" class="button">
-                    <img src="../assets/img/gerente.png" alt="Función 2">
-                    Administrar usuarios
-                </a></li>
-        </ul>
-    <?php elseif ($rol === 'cobranza'): ?>
-        <p>Acceso a funciones de directora</p>
-        <ul>
-            <li><a href="../directora/crudalumnos/alumnos.php" class="button">
-                    <img src="../assets/img/estudiantes.png" alt="Función 1">
-                    Administrar Alumnos
-                </a></li>
-            <li><a href="../directora/crudalumnos/alumnos.php" class="button">
-                    <img src="../assets/img/gerente.png" alt="Función 2">
-                    Administrar usuarios
-                </a></li>
-        </ul>
+        <div class="button-container">
+            <a href="../coordinadoras/crudalumnos/alumnos.php" class="button">
+                <img src="../assets/img/estudiantes.png" alt="Función 1">
+                Administrar Alumnos
+            </a>
+            <a href="../coordinadoras/crudadmnistrativos/usuarios.php" class="button">
+                <img src="../assets/img/gerente.png" alt="Función 2">
+                Administrar usuarios
+            </a>
+        </div>
     <?php elseif ($rol === 'directora'): ?>
         <p>Acceso a funciones de directora</p>
-        <ul>
-            <li><a href="../directora/crudalumnos/alumnos.php" class="button">
-                    <img src="../assets/img/estudiantes.png" alt="Función 1">
-                    Administrar Alumnos
-                </a></li>
-            <li><a href="../directora/crudalumnos/alumnos.php" class="button">
-                    <img src="../assets/img/gerente.png" alt="Función 2">
-                    Administrar usuarios
-                </a></li>
-        </ul>
+        <div class="button-container">
+            <a href="../directora/crudalumnos/alumnos.php" class="button">
+                <img src="../assets/img/estudiantes.png" alt="Función 1">
+                Administrar Alumnos
+            </a>
+            <a href="../directora/crudalumnos/alumnos.php" class="button">
+                <img src="../assets/img/gerente.png" alt="Función 2">
+                Administrar usuarios
+            </a>
+        </div>
+    <?php elseif ($rol === 'cobranza'): ?>
+        <p>Acceso a funciones de cobranza</p>
+        <div class="button-container">
+            <a href="../cobranza/crudalumnos/alumnos.php" class="button">
+                <img src="../assets/img/estudiantes.png" alt="Función 1">
+                Administrar Alumnos
+            </a>
+            <a href="../cobranza/crudalumnos/alumnos.php" class="button">
+                <img src="../assets/img/gerente.png" alt="Función 2">
+                Administrar usuarios
+            </a>
+        </div>
     <?php endif; ?>
 </div>
 </body>
