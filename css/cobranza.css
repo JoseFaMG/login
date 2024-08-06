@@ -1,124 +1,27 @@
 /* cobranza.css */
-
 body.cobranza {
-    background: linear-gradient(135deg, #fff3e0, #ffccbc);
+    background: url('../assets/img/img.png') no-repeat center center fixed;
+    background-size: cover;
     color: #bf360c;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    box-sizing: border-box;
-    animation: fadeIn 2s ease-in-out;
 }
 
-body.cobranza a {
-    color: #e65100;
-    text-decoration: none;
-    transition: color 0.3s;
+body.cobranza .menu-bar {
+    background-color: rgba(191, 54, 12, 0.9);
 }
 
-body.cobranza a:hover {
-    color: #ff6d00;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-.header {
-    background-color: #e65100;
-    color: white;
-    width: 100%;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-}
-
-.container {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    max-width: 800px;
-    width: 100%;
-    margin: 80px auto 20px; /* Ajusta el margen para el header fijo */
-    box-sizing: border-box;
-    text-align: center;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    color: #bf360c;
-    margin-top: 0;
-}
-
-p {
-    line-height: 1.6;
+body.cobranza h1, body.cobranza h2 {
     color: #bf360c;
 }
 
-.button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px;
-    border: 3px solid transparent;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s, border-color 0.3s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    margin: 10px;
-    width: 120px;
-    animation: buttonAppear 1s ease-in-out;
+body.cobranza .button-container .button {
+    background-color: #d84315;
 }
 
-.button:hover {
-    background-color: #0056b3;
-    border-color: #004085;
-    transform: scale(1.05);
-}
-
-.button img {
-    max-width: 100%;
-    max-height: 100px;
-    height: auto;
-    width: auto;
-    margin-bottom: 5px;
-}
-
-@keyframes buttonAppear {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-footer {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #bf360c;
-    text-align: center;
-    width: 100%;
-    padding: 10px;
+body.cobranza .button-container .button:hover {
+    background-color: #bf360c;
 }

@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header('Location: index.html');
+    exit;
+}
+
+// Obtener el nombre de usuario y el rol desde la URL si están presentes
+$user = isset($_GET['user']) ? $_GET['user'] : (isset($_SESSION['user']) ? $_SESSION['user'] : 'Usuario');
+$rol = isset($_GET['rol']) ? $_GET['rol'] : (isset($_SESSION['rol']) ? $_SESSION['rol'] : 'Rol no definido');
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,7 +24,7 @@
 
 <div class="container">
     <div class="navbar">
-        <span>Bienvenid@, <?php echo $_SESSION['user']; ?></span>
+        <span>Bienvenid@, <?php echo htmlspecialchars($user, ENT_QUOTES, 'UTF-8'); ?></span>
         <button onclick="location.href='../../views/dashboard.php'">Menú Principal</button>
         <button onclick="location.href='../../actions/logout.php'">Cerrar Sesión</button>
     </div>
@@ -59,7 +72,7 @@
                     const row = document.createElement('tr');
 
                     row.innerHTML = `
-            <td>${alumno.id}
+            <td>${alumno.id}</td>
             <td>${alumno.matricula}</td>
             <td>${alumno.nombre}</td>
             <td>${alumno.cuatrimestre}</td>

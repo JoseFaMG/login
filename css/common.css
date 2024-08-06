@@ -1,0 +1,87 @@
+/* common.css */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.menu-bar {
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    padding: 10px;
+    text-align: right;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.menu-bar .button {
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.welcome-container {
+    text-align: center;
+    margin-top: 60px; /* Ajusta el margen superior para el menú fijo */
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.button-container .button {
+    display: flex;
+    align-items: center;
+    background-color: #6a1b9a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px 0;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.button-container .button img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.button-container .button:hover {
+    background-color: #8e24aa;
+    transform: scale(1.05);
+}
+
+.footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #6a1b9a;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(106, 27, 154, 0.9); /* Color de fondo con transparencia */
+    color: white;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
