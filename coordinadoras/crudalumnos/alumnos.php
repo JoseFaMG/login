@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
-    header('Location: index.html');
+    header('Location: ../../../views/index.html');
     exit;
 }
 
@@ -40,7 +40,7 @@ $rol = isset($_GET['rol']) ? $_GET['rol'] : (isset($_SESSION['rol']) ? $_SESSION
     <h2>Alumnos Cargados</h2>
 
     <div class="controls">
-        <input type="text" id="searchInput" placeholder="Buscar...">
+        <label for="searchInput"></label><input type="text" id="searchInput" placeholder="Buscar...">
         <button class="search-button" id="searchButton">Buscar</button>
     </div>
 

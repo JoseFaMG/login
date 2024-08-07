@@ -27,7 +27,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Usuario';
     <h2>Tu rol es: Coordinadora</h2>
     <p>Acceso a funciones de coordinadora</p>
     <div class="button-container">
-        <a href="../coordinadoras/crudalumnos/alumnos.php?user=<?php echo urlencode($username); ?>&rol=coordinadora" class="button">
+        <a href="listar_alumnos.php?user=<?php echo urlencode($username); ?>&rol=coordinadora" class="button">
             <img src="../assets/img/estudiantes.png" alt="Función 1">
             Administrar Alumnos
         </a>
@@ -38,7 +38,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Usuario';
     </div>
 </div>
 <footer class="footer">
-    © 2024 Nombre de la Institución
+    UTC Todos los derechos reservados © 2024
 </footer>
 </body>
 </html>

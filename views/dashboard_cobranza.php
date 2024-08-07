@@ -38,7 +38,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Usuario';
     </div>
 </div>
 <footer class="footer">
-    © 2024 Nombre de la Institución
+    UTC Todos los derechos reservados © 2024
 </footer>
 </body>
 </html>
