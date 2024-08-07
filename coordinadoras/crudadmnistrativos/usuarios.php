@@ -18,8 +18,7 @@
     <h1>Gestión de Administrativos</h1>
 
     <div class="controls">
-        <input type="text" id="searchInput" placeholder="Buscar...">
-        <button class="search-button" id="searchButton">Buscar</button>
+        <label for="searchInput"></label><input type="text" id="searchInput" placeholder="Buscar...">
     </div>
 
     <table>

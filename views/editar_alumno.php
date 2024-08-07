@@ -59,6 +59,9 @@ $conn->close();
     <link rel="stylesheet" href="../css/crud.css">
 </head>
 <body>
+<div class="menu">
+    <button onclick="location.href='../views/listar_alumnos.php'">Control de Acceso</button>
+</div>
 <div class="container">
     <h1>Editar Alumno</h1>
     <?php if (isset($alumno)): ?>
