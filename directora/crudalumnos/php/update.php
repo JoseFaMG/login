@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $estado = $_POST['estado'];
 
     // Verificar duplicados
-    $sql = "SELECT COUNT(*) AS count FROM alumnos WHERE (matricula = ? OR nombre = ? OR correo = ?) AND id != ?";
+    $sql = "SELECT COUNT(*) AS count FROM controldeacceso.alumnos WHERE (matricula = ? OR nombre = ? OR correo = ?) AND id != ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("sssi", $matricula, $nombre, $correo, $id);
     $stmt->execute();
@@ -30,25 +30,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $row = $result->fetch_assoc();
 
     if ($row['count'] > 0) {
-        echo "Error: Ya existe un alumno con la misma matrícula, nombre o correo.";
+        $message = "Error: Ya existe un alumno con la misma matrícula, nombre o correo.";
+        $status = "error";
     } else {
         // Preparar la consulta SQL
-        $sql = "UPDATE alumnos SET matricula=?, nombre=?, cuatrimestre=?, correo=?, estado=? WHERE id=?";
+        $sql = "UPDATE controldeacceso.alumnos SET matricula=?, nombre=?, cuatrimestre=?, correo=?, estado=? WHERE id=?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("ssissi", $matricula, $nombre, $cuatrimestre, $correo, $estado, $id);
 
         // Ejecutar la consulta y verificar si fue exitosa
         if ($stmt->execute()) {
-            echo "Datos actualizados correctamente";
+            $message = "Datos actualizados correctamente";
+            $status = "success";
         } else {
-            echo "Error al actualizar los datos: " . $stmt->error;
+            $message = "Error al actualizar los datos: " . $stmt->error;
+            $status = "error";
         }
     }
 
     // Cerrar la declaración preparada
     $stmt->close();
+
+    // Redirigir de vuelta a alumnos.php con un mensaje
+    header("Location: ../alumnos.php?status=$status&message=" . urlencode($message));
+    exit();
 }
 
-// Cerrar la conexión
 $conn->close();
 ?>

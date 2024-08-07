@@ -32,8 +32,8 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Usuario';
             Administrar Alumnos
         </a>
         <a href="../coordinadoras/crudadmnistrativos/usuarios.php?user=<?php echo urlencode($username); ?>&rol=coordinadora" class="button">
-            <img src="../assets/img/gerente.png" alt="Función 2">
-            Administrar usuarios
+            <img src="../assets/img/asistencia.png" alt="Función 2">
+            Administrar Asistencia
         </a>
     </div>
 </div>

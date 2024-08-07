@@ -6,7 +6,14 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-// Obtener el nombre de usuario y el rol desde la URL si están presentes
+if (isset($_GET['status']) && isset($_GET['message'])) {
+    $status = $_GET['status'];
+    $message = $_GET['message'];
+
+    echo "<div class='message $status'>$message</div>";
+}
+
+// Obtener el nombre de usuario y el rol desde la URL si están presentes o desde la sesión
 $user = isset($_GET['user']) ? $_GET['user'] : (isset($_SESSION['user']) ? $_SESSION['user'] : 'Usuario');
 $rol = isset($_GET['rol']) ? $_GET['rol'] : (isset($_SESSION['rol']) ? $_SESSION['rol'] : 'Rol no definido');
 ?>
@@ -40,8 +47,7 @@ $rol = isset($_GET['rol']) ? $_GET['rol'] : (isset($_SESSION['rol']) ? $_SESSION
     <h2>Alumnos Cargados</h2>
 
     <div class="controls">
-        <input type="text" id="searchInput" placeholder="Buscar...">
-        <button class="search-button" id="searchButton">Buscar</button>
+        <label for="searchInput"></label><input type="text" id="searchInput" placeholder="Buscar alumno...">
     </div>
 
     <table>
@@ -109,6 +115,15 @@ $rol = isset($_GET['rol']) ? $_GET['rol'] : (isset($_SESSION['rol']) ? $_SESSION
                 });
         }
     }
+    document.getElementById('searchInput').addEventListener('input', function() {
+        const searchValue = this.value.toLowerCase();
+        const rows = document.querySelectorAll('tbody tr');
+
+        rows.forEach(row => {
+            const matricula = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+            row.style.display = matricula.includes(searchValue) ? '' : 'none';
+        });
+    });
 </script>
 </body>
 </html>

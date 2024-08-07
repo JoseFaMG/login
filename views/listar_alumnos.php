@@ -34,6 +34,10 @@ $conn->close();
 <body>
 <div class="container">
     <h1>Lista de Alumnos</h1>
+    <div class="button-group">
+        <a href="../actions/logout.php" class="btn">Cerrar Sesión</a>
+        <a href="dashboard_coordinadora.php" class="btn">Regresar al Dashboard</a>
+    </div>
     <label for="searchInput"></label><input type="text" id="searchInput" placeholder="Buscar alumno...">
     <table border="1">
         <thead>

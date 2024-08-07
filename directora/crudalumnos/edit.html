@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="php/css/stylesregistro.css">
 </head>
 <body>
+<div class="menu">
+    <button onclick="window.location.href='alumnos.php'">Control de Alumnos</button>
+</div>
 <div class="container">
     <h1>Editar Alumno</h1>
     <form action="php/update.php" method="POST">
@@ -27,7 +30,6 @@
         <label for="estado">Estado:</label>
         <select name="estado" id="estado">
             <option value="permitido">Permitido</option>
-            <option value="pendiente">Pendiente</option>
             <option value="denegado">Denegado</option>
         </select>
 
